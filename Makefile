@@ -1,6 +1,6 @@
 CPP=g++
 CFLAGS=-g -Wall
-SOURCES=bank.cpp main.cpp
+SOURCES=Account.cpp Bank.cpp main.cpp
 EXECUTABLE=basicbank
 
 .PHONY : clean cleanall cleanobj all

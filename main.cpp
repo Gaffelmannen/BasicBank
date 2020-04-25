@@ -21,7 +21,7 @@ int main()
         switch(input)
         {
             case 1:
-                b.Open();
+		b.Open();
                 break;
             case 2:
                 b.Deposit();

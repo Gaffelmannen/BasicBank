@@ -1,10 +1,16 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+#include "Account.h"
+
 class Bank
 {
 	private:
-		int acc_no;
-		char name[20];
-		char acc_type[20];
-		double balance;
+		std::vector<Account> accounts;
+		Account* findAccountByNumber(int);
+
 	public:
 		void Open();
 		void Deposit();
