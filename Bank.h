@@ -9,7 +9,9 @@ class Bank
 {
 	private:
 		std::vector<Account> accounts;
+		
 		Account* findAccountByNumber(int);
+	 	void printAccountNotFoundMessage(int);
 
 	public:
 		void Open();

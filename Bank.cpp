@@ -5,6 +5,13 @@
 
 using namespace std;
 
+void Bank::printAccountNotFoundMessage(int number)
+{
+	cout << "The specified account number " << number;
+	cout << "was not found in the system.";
+	cout << "Aborting!";
+	return;
+}
 
 int readInt(std::istream& stream)
 {
@@ -71,9 +78,7 @@ void Bank::Deposit()
 	
 	if(a == NULL)
 	{
-		cout << "The specified account number " << number;
-		cout << "was not found in the system.";
-		cout << "Aborting!";
+		printAccountNotFoundMessage(number);
 		return;
 	}
 	
@@ -87,6 +92,30 @@ void Bank::Deposit()
 
 void Bank::Withdraw()
 {
+	cout << "Enter account number to withdraw from: ";
+	int number = readInt(cin);
+	Account* a = Bank::findAccountByNumber(number);
+
+	if(a == NULL)
+	{
+		printAccountNotFoundMessage(number);
+		return;
+	}
+
+	cout << "Enter amount to withdraw: ";
+	double withdraw = readDecimal(cin);
+
+	double newBalance = a->Account::getBalance() - withdraw;
+	if(newBalance > 0)
+	{
+		a->Account::setBalance(newBalance);
+		cout << "The amount has been withdrawn from the account.\n";
+	}
+	else
+	{
+		cout << "Error! Insufficent funds. Aborting!\n";
+	}
+
 	return;
 }
 
