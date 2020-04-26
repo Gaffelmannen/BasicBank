@@ -1,6 +1,6 @@
 CPP=g++
-CFLAGS=-g -Wall
-SOURCES=Account.cpp Bank.cpp main.cpp
+CXXFLAGS=-g -Wall -Werror
+SOURCES=FileManager.cpp Account.cpp Bank.cpp main.cpp
 EXECUTABLE=basicbank
 
 .PHONY : clean cleanall cleanobj all
@@ -16,6 +16,6 @@ cleanobj :
 	    rm -f *.o
 
 all :
-	    $(CPP) $(CFLAGS) -o $(EXECUTABLE) $(SOURCES)
+	    $(CPP) $(CXXFLAGS) -o $(EXECUTABLE) $(SOURCES)
 
    
