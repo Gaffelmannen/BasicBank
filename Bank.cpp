@@ -4,6 +4,17 @@
 #include <iomanip>
 
 using namespace std;
+//using namespace fs;
+
+Bank::Bank(void)
+{
+	Bank::fm = new FileManager();
+}
+
+Bank::~Bank(void)
+{
+	delete fm;
+}
 
 void Bank::printAccountNotFoundMessage(int number)
 {

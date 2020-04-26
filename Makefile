@@ -1,5 +1,5 @@
-CPP=g++
-CXXFLAGS=-g -Wall -Werror
+CPP=clang++
+CXXFLAGS=-g -Wall -std=c++17
 SOURCES=FileManager.cpp Account.cpp Bank.cpp main.cpp
 EXECUTABLE=basicbank
 

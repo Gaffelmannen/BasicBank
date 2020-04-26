@@ -17,6 +17,7 @@ int main()
         cout << "3. Withdraw\n";
         cout << "4. Inspect\n";
         cout << "5. Exit\n";
+	cout << "6. Demo\n";
         cin >> input;
         switch(input)
         {
@@ -35,6 +36,9 @@ int main()
             case 5:
                 cout << "\nBye!\n";
                 return 0;
+	    case 6:
+		cout << "Demo!!";
+		break;
         }
     }
 }

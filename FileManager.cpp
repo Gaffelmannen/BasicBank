@@ -1,8 +1,12 @@
 #include "FileManager.h"
 
+//namespace fs = std::filesystem;
+
+const std::string FileManager::BASE_DIR = "files";
+
 FileManager::FileManager()
 {
-	BASE_DIR = "files";
+
 }
 
 void FileManager::WriteToFile(std::string filename, std::string content)
@@ -28,6 +32,11 @@ std::string FileManager::ReadFromFile(std::string filename)
 
 std::string* FileManager::ListFiles(void)
 {
+	std::string path = BASE_DIR;
+	for (const auto & entry : std::filesystem::directory_iterator(path))
+	{
+		std::cout << entry.path() << std::endl;
+	}
 	return NULL;
 }
 

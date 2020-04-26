@@ -1,5 +1,10 @@
+#ifndef FILE_MANAGER_H
+#define FILE_MANAGER_H
+
 #include <iostream>
 #include <fstream>
+#include <string>
+#include <filesystem>
 
 #include "Account.h"
 
@@ -15,6 +20,9 @@ class FileManager
 		std::string* ListFiles(void);
 
 	public:
+		FileManager();
 		void SaveAccount(Account*);
 		Account* LoadAllAccounts(void);
 };
+
+#endif
