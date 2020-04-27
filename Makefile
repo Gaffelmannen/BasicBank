@@ -14,6 +14,7 @@ cleanall : cleanobj
 
 cleanobj :
 	    rm -f *.o
+	    rm -rf basicbank.dSYM/
 
 all :
 	    $(CPP) $(CXXFLAGS) -o $(EXECUTABLE) $(SOURCES)

@@ -17,12 +17,11 @@ int main()
         cout << "3. Withdraw\n";
         cout << "4. Inspect\n";
         cout << "5. Exit\n";
-	cout << "6. Demo\n";
         cin >> input;
         switch(input)
         {
             case 1:
-		b.Open();
+                b.Open();
                 break;
             case 2:
                 b.Deposit();
@@ -34,11 +33,8 @@ int main()
                 b.Inspect();
                 break;
             case 5:
-                cout << "\nBye!\n";
+                cout << endl << "Bye!" << endl;
                 return 0;
-	    case 6:
-		cout << "Demo!!";
-		break;
         }
     }
 }

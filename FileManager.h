@@ -5,6 +5,7 @@
 #include <fstream>
 #include <string>
 #include <filesystem>
+#include <vector>
 
 #include "Account.h"
 
@@ -16,13 +17,14 @@ class FileManager
 		static const std::string BASE_DIR;
 
 		void WriteToFile(std::string, std::string);
-		std::string ReadFromFile(std::string);
-		std::string* ListFiles(void);
+        vector<string> ReadFromFile(std::string);
+		vector<string> ListFiles(void);
+        vector<vector<string>> ReadAllFiles(void);
 
 	public:
-		FileManager();
+		FileManager(void);
 		void SaveAccount(Account*);
-		Account* LoadAllAccounts(void);
+		vector<Account> LoadAllAccounts(void);
 };
 
 #endif

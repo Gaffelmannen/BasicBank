@@ -8,7 +8,9 @@ using namespace std;
 
 Bank::Bank(void)
 {
+	cout << "Bank - bank, bank\n";
 	Bank::fm = new FileManager();
+	accounts = fm->FileManager::LoadAllAccounts();
 }
 
 Bank::~Bank(void)
