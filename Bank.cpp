@@ -20,8 +20,8 @@ Bank::~Bank(void)
 void Bank::printAccountNotFoundMessage(int number)
 {
 	cout << "The specified account number " << number;
-	cout << "was not found in the system.";
-	cout << "Aborting!";
+	cout << " was not found in the system.";
+	cout << " Aborting!";
 	return;
 }
 

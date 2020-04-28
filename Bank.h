@@ -1,3 +1,6 @@
+#ifndef BANK_H
+#define BANK_H
+
 #include <iostream>
 #include <vector>
 
@@ -23,3 +26,5 @@ class Bank
 		void Withdraw();
 		void Inspect();
 };
+
+#endif
