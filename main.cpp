@@ -11,12 +11,14 @@ int main()
     int input;
     while(1)
     {
-        cout << "Main Menu:\n\n";
+        cout << "\n";
+        cout << "Main Menu:\n";
         cout << "1. Open new account\n";
         cout << "2. Deposit\n";
         cout << "3. Withdraw\n";
         cout << "4. Inspect\n";
         cout << "5. Exit\n";
+        cout << "> ";
         cin >> input;
         switch(input)
         {

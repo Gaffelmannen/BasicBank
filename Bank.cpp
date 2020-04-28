@@ -138,16 +138,22 @@ void Bank::Inspect()
 {
 	cout << "\n";
 	cout << "List of all " << accounts.size() <<  " accounts: " << "\n";
-	cout << "======================" << "\n";
+	cout << "===============================" << "\n";
+    cout << "Name" << "\t";
+    cout << "Number" << "\t";
+    cout << "Type" << "\t";
+    cout << "Balance" << "\t";
+    cout << endl;
+    cout << "===============================" << "\n";
 	for(unsigned int i = 0; i < accounts.size(); i++)
 	{
-		cout << accounts.at(i).getName() << "\n";
-		cout << accounts.at(i).getNumber() << "\n";
-		cout << accounts.at(i).getType() << "\n";
-		cout << accounts.at(i).getBalance() << "\n";
+		cout << accounts.at(i).getName() << "\t";
+		cout << accounts.at(i).getNumber() << "\t";
+		cout << accounts.at(i).getType() << "\t";
+		cout << accounts.at(i).getBalance() << "\t";
         cout << endl;
 	}
-	cout << "======================" << "\n";
+	cout << "===============================" << "\n";
 
 	return;
 }
