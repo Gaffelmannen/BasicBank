@@ -103,7 +103,6 @@ vector<Account> FileManager::LoadAllAccounts(void)
     {
         try
         {
-            cout << file[0][0] << " ";
             if( file[0][0].compare(ACCOUNT_FILE_HEADER) == 0 )
             {
                 Account a;
@@ -112,18 +111,12 @@ vector<Account> FileManager::LoadAllAccounts(void)
                 a.Account::setType(file[0][3]);
                 a.Account::setBalance(stod(file[0][4]));
                 accounts.push_back(a);
-                cout << " valid." << endl;
-            }
-            else
-            {
-                cout << " NOT valid." << endl;
             }
         }
         catch (const std::exception& e)
         {
             cout << "Something went wrong." << endl;
-        }
-        
+        }   
     }
     
     return accounts;
