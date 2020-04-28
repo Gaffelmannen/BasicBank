@@ -15,6 +15,8 @@ class FileManager
 {
 	private:
 		static const std::string BASE_DIR;
+        static const std::string ACCOUNT_FILE_HEADER;
+        static const std::string FILE_ABBREVATION;
 
 		void WriteToFile(std::string, std::string);
         vector<string> ReadFromFile(std::string);

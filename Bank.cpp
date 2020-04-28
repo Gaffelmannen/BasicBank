@@ -8,9 +8,8 @@ using namespace std;
 
 Bank::Bank(void)
 {
-	cout << "Bank - bank, bank\n";
 	Bank::fm = new FileManager();
-	accounts = fm->FileManager::LoadAllAccounts();
+    accounts = fm->FileManager::LoadAllAccounts();
 }
 
 Bank::~Bank(void)
@@ -99,6 +98,7 @@ void Bank::Deposit()
 	double deposit = readDecimal(cin);
 
 	a->Account::setBalance(a->Account::getBalance() + deposit);
+    fm->FileManager::SaveAccount(a);
 
 	return;
 }
@@ -123,6 +123,8 @@ void Bank::Withdraw()
 	{
 		a->Account::setBalance(newBalance);
 		cout << "The amount has been withdrawn from the account.\n";
+        
+        fm->FileManager::SaveAccount(a);
 	}
 	else
 	{
@@ -143,6 +145,7 @@ void Bank::Inspect()
 		cout << accounts.at(i).getNumber() << "\n";
 		cout << accounts.at(i).getType() << "\n";
 		cout << accounts.at(i).getBalance() << "\n";
+        cout << endl;
 	}
 	cout << "======================" << "\n";
 

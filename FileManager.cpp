@@ -1,8 +1,11 @@
 #include "FileManager.h"
 
 //namespace fs = std::filesystem;
+using namespace std;
 
 const std::string FileManager::BASE_DIR = "files";
+const std::string FileManager::ACCOUNT_FILE_HEADER = "-#-account-#-";
+const std::string FileManager::FILE_ABBREVATION = ".txt";
 
 FileManager::FileManager()
 {
@@ -11,7 +14,9 @@ FileManager::FileManager()
 
 void FileManager::WriteToFile(string filename, string content)
 {
-	ofstream file(filename);
+    std::string path = BASE_DIR + "/" + filename;
+    
+	ofstream file(path);
 	if(file.is_open())
 	{
 		file << content;
@@ -76,6 +81,16 @@ vector<vector<string>> FileManager::ReadAllFiles(void)
 
 void FileManager::SaveAccount(Account* account)
 {
+    string filename = std::to_string(account->getNumber()) + FILE_ABBREVATION;
+    
+    string content = ACCOUNT_FILE_HEADER;
+    content += "\n";
+    content += account->getName() + "\n";
+    content += std::to_string(account->getNumber()) + "\n";
+    content += account->getType() + "\n";
+    content += std::to_string(account->getBalance()) + "\n";
+    
+    FileManager::WriteToFile(filename, content);
 	return;
 }
 
@@ -89,7 +104,7 @@ vector<Account> FileManager::LoadAllAccounts(void)
         try
         {
             cout << file[0][0] << " ";
-            if( file[0][0].compare("-#-account-#-") == 0 )
+            if( file[0][0].compare(ACCOUNT_FILE_HEADER) == 0 )
             {
                 Account a;
                 a.Account::setName(file[0][1]);
